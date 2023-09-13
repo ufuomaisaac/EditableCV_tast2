@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">CVProject_task2</string>
+    <string name="name">Name:</string>
+    <string name="edit_cv">Edit CV</string>
+    <string name="bio">Bio</string>
+    <string name="github_handle">Github Handle</string>
+    <string name="slack_username">Slack UserName</string>
+</resources>
