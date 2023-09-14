@@ -1,5 +1,6 @@
 package com.example.cvproject_task2
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -13,6 +14,17 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         var parentView = binding.root
         setContentView(parentView)
+
+
+        // Writing data to SharedPreferences
+        val sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.putString("username", "john_doe")
+        editor.apply()
+
+// Reading data from SharedPreferences
+        val username = sharedPreferences.getString("username", "default_username")
+
 
         intent.also {
             binding.fullNameText.text = it.getStringExtra("fullname")
