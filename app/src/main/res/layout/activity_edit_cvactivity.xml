@@ -4,8 +4,122 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="15dp"
     tools:context=".EditCVActivity">
 
+    <TextView
+        android:id="@+id/editProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:text="Edit Profile"
+        android:textStyle="italic|bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15"/>
+
+    <TextView
+        android:id="@+id/fullName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:textStyle="italic"
+        android:text="Name"
+        app:layout_constraintTop_toTopOf="@id/guideline"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/fullNameEdit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Your Full Name"
+        app:layout_constraintStart_toEndOf="@id/fullName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/fullName" />
+
+    <TextView
+        android:id="@+id/slackUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:textStyle="italic"
+        android:text="UserName"
+        app:layout_constraintTop_toBottomOf="@id/fullNameEdit"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/slackUserNameEdit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Your Slack UserName"
+        app:layout_constraintStart_toEndOf="@id/slackUserName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/slackUserName"/>
+
+    <TextView
+        android:id="@+id/githubhandle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:textStyle="italic"
+        android:text="Github Handle"
+        app:layout_constraintTop_toBottomOf="@id/slackUserNameEdit"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/githubhandleEdit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Your Github Handle"
+        app:layout_constraintStart_toEndOf="@id/githubhandle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/githubhandle" />
+
+    <TextView
+        android:id="@+id/personalBio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:textStyle="italic"
+        android:text="Bio"
+        app:layout_constraintTop_toBottomOf="@id/githubhandleEdit"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/personalBioEdit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Your Bio"
+        app:layout_constraintStart_toEndOf="@id/personalBio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/personalBio" />
+
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.85"/>
+
+    <Button
+        android:id="@+id/saveChangesButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save Changes"
+        android:padding="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
