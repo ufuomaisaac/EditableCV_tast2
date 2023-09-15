@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="24sp"
-        android:text="Edit Profile"
+        android:text="@string/edit_profile"
         android:textStyle="italic|bold"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="@id/guideline"
@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:textSize="22sp"
         android:textStyle="italic"
-        android:text="Name"
+        android:text="@string/full_name"
         app:layout_constraintTop_toTopOf="@id/guideline"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -41,7 +41,8 @@
         android:id="@+id/fullNameEdit"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Your Full Name"
+        android:hint="@string/your_full_name"
+        android:layout_marginStart="4dp"
         app:layout_constraintStart_toEndOf="@id/fullName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/fullName" />
@@ -52,7 +53,7 @@
         android:layout_height="wrap_content"
         android:textSize="22sp"
         android:textStyle="italic"
-        android:text="UserName"
+        android:text="@string/username"
         app:layout_constraintTop_toBottomOf="@id/fullNameEdit"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -60,7 +61,8 @@
         android:id="@+id/slackUserNameEdit"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Your Slack UserName"
+        android:hint="@string/your_slack_username"
+        android:layout_marginStart="4dp"
         app:layout_constraintStart_toEndOf="@id/slackUserName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/slackUserName"/>
@@ -71,7 +73,7 @@
         android:layout_height="wrap_content"
         android:textSize="22sp"
         android:textStyle="italic"
-        android:text="Github Handle"
+        android:text="@string/github_handlee"
         app:layout_constraintTop_toBottomOf="@id/slackUserNameEdit"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -79,7 +81,8 @@
         android:id="@+id/githubhandleEdit"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Your Github Handle"
+        android:hint="@string/your_github_handle"
+        android:layout_marginStart="4dp"
         app:layout_constraintStart_toEndOf="@id/githubhandle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/githubhandle" />
@@ -90,7 +93,7 @@
         android:layout_height="wrap_content"
         android:textSize="22sp"
         android:textStyle="italic"
-        android:text="Bio"
+        android:text="@string/bioo"
         app:layout_constraintTop_toBottomOf="@id/githubhandleEdit"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -98,7 +101,8 @@
         android:id="@+id/personalBioEdit"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Your Bio"
+        android:hint="@string/your_bioo"
+        android:layout_marginStart="4dp"
         app:layout_constraintStart_toEndOf="@id/personalBio"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/personalBio" />
@@ -116,7 +120,7 @@
         android:id="@+id/saveChangesButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Save Changes"
+        android:text="@string/save_changess"
         android:padding="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

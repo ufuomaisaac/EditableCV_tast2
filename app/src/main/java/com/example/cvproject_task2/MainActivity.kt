@@ -18,41 +18,16 @@ class MainActivity : AppCompatActivity() {
         var parentView = binding.root
         setContentView(parentView)
 
-
         sharedPreferences = getSharedPreferences("myPrefs", MODE_PRIVATE)
         getPrefValue()
 
-       // val editor = sharedPreferences.edit()
-
         intent.also {
             getPrefValue()
-/*
-            editor.apply {
-                putString("fullname", it.getStringExtra("fullname"))
-                putString("slackname", it.getStringExtra("slackname"))
-                putString("githubhandle", it.getStringExtra("githubhandle"))
-                putString("personalbio", it.getStringExtra("personalbio"))
-                apply()
-            }
-            getPrefValue()
-*/
-
-
         }
 
         binding.editCV.setOnClickListener {
             Intent(this, EditCVActivity::class.java).also {
                 startActivity(it)
-/*
-                var fullName = binding.fullNameText.text.toString()
-                var slackName = binding.slackUserNameText.text.toString()
-                var githubHandle = binding.githubhandleText.text.toString()
-                var personalBio = binding.personalBioText.text.toString()
-                it.putExtra("fullname", fullName)
-                it.putExtra("slackname", slackName)
-                it.putExtra("githubhandle", githubHandle)
-                it.putExtra("personalbio", personalBio)
-                startActivity(it)*/
             }
         }
     }
@@ -68,6 +43,5 @@ class MainActivity : AppCompatActivity() {
             binding.githubhandleText.setText(githubhandle)
             binding.personalBioText.setText(personalbio)
         }
-
     }
 }

@@ -21,20 +21,9 @@ class EditCVActivity : AppCompatActivity() {
 
         intent.also {
             getPrefValue()
-
-
-           /* binding.fullNameEdit.setText(it.getStringExtra("fullname"))
-            binding.slackUserNameEdit.setText(it.getStringExtra("slackname"))
-            binding.githubhandleEdit.setText(it.getStringExtra("githubhandle"))
-            binding.personalBioEdit.setText(it.getStringExtra("personalbio"))*/
         }
 
         binding.saveChangesButton.setOnClickListener {
-           /* var fullName = binding.fullNameEdit.text.toString()
-            var slackName = binding.slackUserNameEdit.text.toString()
-            var githubHandle = binding.githubhandleEdit.text.toString()
-            var personalBio = binding.personalBioEdit.text.toString()*/
-
             var editor = sharedPreferences.edit()
             editor.putString("fullname", binding.fullNameEdit.text.toString())
             editor.putString("slackname", binding.slackUserNameEdit.text.toString())
@@ -42,23 +31,10 @@ class EditCVActivity : AppCompatActivity() {
             editor.putString("personalbio", binding.personalBioEdit.text.toString())
             editor.apply()
 
-
-
             Intent(this, MainActivity::class.java).also{
                 startActivity(it)
-               /* val fullName = binding.fullNameEdit.text.toString()
-                val slackName = binding.slackUserNameEdit.text.toString()
-                val githubHandle = binding.githubhandleEdit.text.toString()
-                val personalBio = binding.personalBioEdit.text.toString()
-                it.putExtra("fullname", fullName)
-                it.putExtra("slackname", slackName)
-                it.putExtra("githubhandle", githubHandle)
-                it.putExtra("personalbio", personalBio)
-                startActivity(it)*/
             }
         }
-
-
     }
     fun getPrefValue(){
         var name = sharedPreferences.getString("fullname", null)
@@ -72,6 +48,5 @@ class EditCVActivity : AppCompatActivity() {
             binding.githubhandleEdit.setText(githubhandle)
             binding.personalBioEdit.setText(personalbio)
         }
-
     }
 }

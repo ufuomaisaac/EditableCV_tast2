@@ -5,4 +5,14 @@
     <string name="bio">Bio</string>
     <string name="github_handle">Github Handle</string>
     <string name="slack_username">Slack UserName</string>
+    <string name="your_slack_username">Your Slack UserName</string>
+    <string name="username">UserName</string>
+    <string name="your_full_name">Your Full Name</string>
+    <string name="full_name">Name</string>
+    <string name="your_github_handle">Your Github Handle</string>
+    <string name="github_handlee">Github Handle</string>
+    <string name="bioo">Bio</string>
+    <string name="your_bioo">Your Bio</string>
+    <string name="save_changess">Save Changes</string>
+    <string name="edit_profile">Edit Profile</string>
 </resources>
