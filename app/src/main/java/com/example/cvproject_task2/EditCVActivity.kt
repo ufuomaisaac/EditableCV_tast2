@@ -20,20 +20,8 @@ class EditCVActivity : AppCompatActivity() {
         sharedPreferences = getSharedPreferences("myPrefs", Context.MODE_PRIVATE)
 
         intent.also {
-            fun getPrefValue(){
-                var name = sharedPreferences.getString("fullname", null)
-                var slackname = sharedPreferences.getString("slackname", null)
-                var githubhandle = sharedPreferences.getString("githubhandle", null)
-                var personalbio = sharedPreferences.getString("personalbio", null)
+            getPrefValue()
 
-                if(name != null || slackname != null || githubhandle != null ) {
-                    binding.fullNameEdit.setText(name)
-                    binding.slackUserNameEdit.setText(slackname)
-                    binding.githubhandleEdit.setText(githubhandle)
-                    binding.personalBioEdit.setText(personalbio)
-                }
-
-            }
 
            /* binding.fullNameEdit.setText(it.getStringExtra("fullname"))
             binding.slackUserNameEdit.setText(it.getStringExtra("slackname"))
@@ -70,6 +58,20 @@ class EditCVActivity : AppCompatActivity() {
             }
         }
 
+
+    }
+    fun getPrefValue(){
+        var name = sharedPreferences.getString("fullname", null)
+        var slackname = sharedPreferences.getString("slackname", null)
+        var githubhandle = sharedPreferences.getString("githubhandle", null)
+        var personalbio = sharedPreferences.getString("personalbio", null)
+
+        if(name != null || slackname != null || githubhandle != null ) {
+            binding.fullNameEdit.setText(name)
+            binding.slackUserNameEdit.setText(slackname)
+            binding.githubhandleEdit.setText(githubhandle)
+            binding.personalBioEdit.setText(personalbio)
+        }
 
     }
 }
