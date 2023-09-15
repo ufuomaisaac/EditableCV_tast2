@@ -2,12 +2,15 @@ package com.example.cvproject_task2
 
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import com.example.cvproject_task2.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+    lateinit var sharedPreferences : SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,26 +19,31 @@ class MainActivity : AppCompatActivity() {
         setContentView(parentView)
 
 
-        // Writing data to SharedPreferences
-        val sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
-        val editor = sharedPreferences.edit()
-        editor.putString("username", "john_doe")
-        editor.apply()
+        sharedPreferences = getSharedPreferences("myPrefs", MODE_PRIVATE)
+        getPrefValue()
 
-// Reading data from SharedPreferences
-        val username = sharedPreferences.getString("username", "default_username")
-
+       // val editor = sharedPreferences.edit()
 
         intent.also {
-            binding.fullNameText.text = it.getStringExtra("fullname")
-            binding.slackUserNameText.text = it.getStringExtra("slackname")
-            binding.githubhandleText.text = it.getStringExtra("githubhandle")
-            binding.personalBioText.text = it.getStringExtra("personalbio")
+            getPrefValue()
+/*
+            editor.apply {
+                putString("fullname", it.getStringExtra("fullname"))
+                putString("slackname", it.getStringExtra("slackname"))
+                putString("githubhandle", it.getStringExtra("githubhandle"))
+                putString("personalbio", it.getStringExtra("personalbio"))
+                apply()
+            }
+            getPrefValue()
+*/
+
+
         }
 
         binding.editCV.setOnClickListener {
             Intent(this, EditCVActivity::class.java).also {
-
+                startActivity(it)
+/*
                 var fullName = binding.fullNameText.text.toString()
                 var slackName = binding.slackUserNameText.text.toString()
                 var githubHandle = binding.githubhandleText.text.toString()
@@ -44,8 +52,22 @@ class MainActivity : AppCompatActivity() {
                 it.putExtra("slackname", slackName)
                 it.putExtra("githubhandle", githubHandle)
                 it.putExtra("personalbio", personalBio)
-                startActivity(it)
+                startActivity(it)*/
             }
         }
+    }
+    fun getPrefValue(){
+        var name = sharedPreferences.getString("fullname", null)
+        var slackname = sharedPreferences.getString("slackname", null)
+        var githubhandle = sharedPreferences.getString("githubhandle", null)
+        var personalbio = sharedPreferences.getString("personalbio", null)
+
+        if(name != null || slackname != null || githubhandle != null ) {
+            binding.fullNameText.setText(name)
+            binding.slackUserNameText.setText(slackname)
+            binding.githubhandleText.setText(githubhandle)
+            binding.personalBioText.setText(personalbio)
+        }
+
     }
 }
